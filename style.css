@@ -30,10 +30,17 @@ body{
 }
 .calDisplay{
     width: 380px;
+    display: grid;
+    place-items: center right;
     height: 150px;
     background-color: black;
     margin-top: 7px;
     border-radius: 5px;
+    color: rgb(30, 215, 30);
+    text-align: end;
+    font-size: xx-large;
+    font-weight: bolder;
+
 }
 .calInput{
     width: 380px;
