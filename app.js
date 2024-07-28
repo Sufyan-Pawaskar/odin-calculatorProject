@@ -9,13 +9,20 @@ function operate(){
     let num2 = parseFloat(secondDigit);
     let result = ''
     if (operator === '+'){
-        result = num1 + num2;
+        output = num1 + num2;
+        result = output.toFixed(2);
     } else if (operator === '-'){
-        result = num1 - num2;
+        output = num1 - num2;
+        result = output.toFixed(2);
     } else if (operator === 'x'){
-        result = num1 * num2;
+        output = num1 * num2;
+        result = output.toFixed(2);
     } else if (operator === '/'){
-        result = num1 / num2;
+        output = num1 / num2;
+        result = output.toFixed(2);
+    }
+    if (result.toString() === 'NaN' || result.toString() === 'Infinity'){
+        result = 'Think Again'
     }
     return result;
 }
@@ -23,7 +30,7 @@ function keyPressed(data){
     console.log(data.innerText);
     var pressedkey = data.innerText;
     if (pressedkey == 'C'){
-        display.textContent = '';
+        display.textContent = '0.00';
         firstDigit ='', operator = '', secondDigit = '';
     }
     if (digits.includes(pressedkey)){
@@ -44,12 +51,28 @@ function keyPressed(data){
         if(operator == ''){
             operator = pressedkey;
             display.textContent = firstDigit + operator + secondDigit;
+        } else{
+            result = operate();
+            if (result === 'Think Again'){
+                firstDigit = '';
+                operator = '';
+                secondDigit = '';
+                display.textContent = result.toString();
+            } else {
+                firstDigit = result.toString();
+                operator = pressedkey;
+                secondDigit = '';
+                display.textContent = firstDigit + operator + secondDigit;
+            }
         }
     }
     if (pressedkey == '=' && firstDigit !== '' && secondDigit !== '' && operator !== ''){
         let result = operate();
         display.textContent = result.toString();
         firstDigit = result.toString();
+        if (result === 'Think Again'){
+            firstDigit = '';
+        }
         operator = '';
         secondDigit = '';
     }
