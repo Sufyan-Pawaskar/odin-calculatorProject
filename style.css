@@ -1,0 +1,82 @@
+*{
+    font-family: "Roboto Condensed", sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100wh;
+    background: burlywood;
+}
+.calBody{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 650px;
+    background-color: gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+.calInnerBody{
+    /* position: relative; */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:37px;
+    
+}
+.calDisplay{
+    width: 380px;
+    height: 150px;
+    background-color: black;
+    margin-top: 7px;
+    border-radius: 5px;
+}
+.calInput{
+    width: 380px;
+    height: 450px;
+    /* background-color: brown; */
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.calInputNum{
+    width: 280px;
+    height:400px;
+    /* background-color: white; */
+}
+.calInputOperator{
+    width: 90px;
+    height: 400px;
+    /* background-color: white; */
+}
+.keysNum,.keysOpr{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.key{
+    /* display: grid; */
+    /* place-items: center; */
+    text-align: center;
+    width: 90px;
+    height: 90px;
+    background-color:gainsboro;
+    margin: 5px 0px;
+    border-radius: 50%;
+    font-size: xx-large;
+    font-weight: bolder;
+    /* border: 1px solid gray; */
+    /* border: none; */
+}
+.key.equalKey{
+    background-color: orangered;
+}
+.key.opr{
+    background-color: rgb(91, 90, 90);
+}
